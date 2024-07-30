@@ -1,4 +1,4 @@
-import { findAll, save, updateWarehouse } from "../models/warehouseModel.js";
+import { findAll, save, updateWarehouse, removeWarehouse } from "../models/warehouseModel.js";
 
 export const getAll = async (_,res) => {
     const warehouses = await findAll();
@@ -24,3 +24,13 @@ export const update = async (req, res) => {
     const updatedWarehouse = await updateWarehouse(warehouseId, {name, location});
     res.status(204).json({message: "Updated successfully", response: updatedWarehouse});
 };
+
+export const remove = async (req, res) => {
+    const warehouseId = req.params.id;
+    const warehouseRemoved = await removeWarehouse(warehouseId)
+    res.status(200).json({
+        message: "Successfully deleted",
+        warehouse: warehouseRemoved
+    });
+
+}

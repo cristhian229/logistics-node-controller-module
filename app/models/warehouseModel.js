@@ -54,3 +54,13 @@ export const updateWarehouse = async (id, newWarehouse) => {
     }
 
 };
+
+export const removeWarehouse = async (id) => {
+    try {
+        const warehouseToDelete = await findById(id);
+        await pool.query("DELETE FROM warehouses WHERE id = ?", [id]);
+        return warehouseToDelete
+    } catch (error) {
+        throw new Error("Warehouse has not been deleted", error);
+    }
+}

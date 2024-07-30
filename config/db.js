@@ -3,12 +3,12 @@ let pool;
 
 try {
     pool = mysql2.createPool({
-        host: 'b0m91voppvz74ioul0wn-mysql.services.clever-cloud.com',
-        user: 'u7a8s3u6ybr12geb',
-        database: 'b0m91voppvz74ioul0wn',
+        host: 'b9didq1lt0irkujv5o9w-mysql.services.clever-cloud.com',
+        user: 'ur1waygynondsbx1',
+        database: 'b9didq1lt0irkujv5o9w',
         port: 3306,
-        password: 'WzWTXQpFwsU3PpWkIQUc',
-    })
+        password: 'GewWC9o4hZLyFVpIAMTu',
+      })
 
     console.log('data base conected');
 } catch (err) {
